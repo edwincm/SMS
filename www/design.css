@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0; 
+    background-color:  #CAAEE9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label{
+    font-size: 16px;
+    color: #CAAEE9;
+}
+
+.navbar{
+    width: 100%;
+    background-color: #3C067A;
+    overflow: auto;
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 60px;
+}
+
+.navbar li{
+    float: right;
+}
+
+.navbar ul li a{
+    color: #CAAEE9;
+    text-decoration: none;
+    width: 130px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+#middle{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background-color: #3C067A;
+    border-radius: 10px;
+}
+#middle h2{
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+    color: #CAAEE9;
+}
+#middle .inputbox{
+    position: relative;
+}
+#middle .inputbox input{
+    
+    width:100%;
+    padding:10px 0;
+    font-size: 16px;
+    color: #CAAEE9;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #CAAEE9;
+    outline: none;
+    background: transparent;
+}
+
+#middle .inputbox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:10px 0;
+    font-size: 16px;
+    color: #CAAEE9;
+    pointer-events: none;
+    transition: .5s;
+}
+
+#middle .inputbox input:focus ~ label,
+#middle .inputbox input:valid ~ label
+{
+    top: -20px;
+    left: 0;
+    color: rgb(143, 100, 189);
+    font-size: 12px;
+}
+
+#middle input[type="submit"]{
+    background: transparent;
+    border:none;
+    outline: none;
+    color: #CAAEE9;
+    background: #580AAC;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+p{
+    font-size: 20px;
+    color: #CAAEE9;
+}
+footer p{
+    position: absolute;
+    top: 90%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    font-size: 16px;
+    color: #3C067A;
+}
