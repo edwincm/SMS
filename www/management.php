@@ -11,6 +11,7 @@
     <body>
         <nav class="navbar">
             <ul>
+                <li><div id="name"><?php echo $_SESSION['name'];?></div></li>
                 <li><a href="index.php" name="logout">Logout</a></li>
             </ul>
         </nav>

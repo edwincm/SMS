@@ -22,11 +22,15 @@ label{
     line-height: 60px;
 }
 
-.navbar li{
+.navbar li div{
+    float: left;
+}
+
+.navbar li a{
     float: right;
 }
 
-.navbar ul li a{
+.navbar ul li a,#name{
     color: #CAAEE9;
     text-decoration: none;
     width: 130px;
@@ -99,10 +103,26 @@ label{
     cursor: pointer;
     border-radius: 5px;
 }
+#details{
+    margin: 0;     
+}
+
+#middle #details .output{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#middle #details .output label{
+    size: 10px;
+}
+
 p{
     font-size: 20px;
     color: #CAAEE9;
 }
+
 footer p{
     position: absolute;
     top: 90%; 

@@ -11,7 +11,7 @@
     mysqli_free_result($result);
     //CLOSE CONNECTION 
     mysqli_close($conn);
-?>kkj
+?>
 <html>
     <head>
         <meta charset="utf-8"/>
@@ -25,7 +25,7 @@
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
                     <div class="inputbox">
                         <label>ID</label>
-                        <input type="text" name="username" required=""/>
+                        <input type="text" name="username" autofocus="" required=""/>
                     </div>
                     <div class="inputbox">
                         <label>Password</label>
@@ -47,10 +47,10 @@
                     if($login['U_ID']==$email AND $login['PASSWORD']==$pass){
                         $_SESSION['name']=$login['NAME'];
                         if($login['PRIVILEGE']==1){
-                            header('Location:storekeeper.php');
+                            header('Location:management.php');
                         }
                         else if($login['PRIVILEGE']==2){
-                            header('Location:management.php');
+                            header('Location:storekeeper.php');
                         }
                         else{
 
