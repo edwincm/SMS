@@ -39,6 +39,39 @@ label{
     font-size: 16px;
     letter-spacing: 0.5px;
 }
+.flex_class{
+    display: flex;
+    margin-top: 10px;
+}
+#middle_left{
+    position: absolute;
+    display: flex;
+    top: 50%; 
+    left: 0%;
+    transform: translate(10%,-50%);
+    width: 350px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background-color: #3C067A;
+    border-radius: 10px;
+}
+#middle_left #details .output label,input{
+    size: 10px;
+}
+#middle_left input[type="submit"]{
+    margin-left:20px;
+    position: absolute;
+    background: transparent;
+    border:none;
+    outline: none;
+    color: #CAAEE9;
+    background: #580AAC;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 #middle{
     position: absolute;
     top: 50%; 
