@@ -2,7 +2,7 @@
     session_start();
     require("config.php");
     //CREATE QUERY
-    $query="SELECT l.U_ID,PASSWORD,NAME,PRIVILEGE FROM login l,user u where l.U_ID=u.U_ID;";
+    $query="SELECT * FROM user;";
     //GET RESULT
     $result=mysqli_query($conn,$query);
     //FETCH DATA 
@@ -14,7 +14,7 @@
 ?>
 <html>
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
         <title>STORE MANAGEMENT SYSTEM</title>
         <link rel="stylesheet" href="design.css"/>
     </head>
