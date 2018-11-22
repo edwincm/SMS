@@ -12,3 +12,4 @@
             //Connection Failed 
             echo 'Failed to Connect MySQL'.mysqli_connect_errno();
     }
+?>

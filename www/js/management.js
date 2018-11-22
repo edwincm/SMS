@@ -1,12 +1,3 @@
-/*var sum = 0;     ç        
-$(".fieldsbankrecon1").each(function() 
-{ 
-  if(!isNaN(this.value) && this.value.length!=0) 
-  {
-    sum += parseFloat(this.value);            
-  }         
-});*/
-
 function openView(evt, viewName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -30,4 +21,4 @@ function openView(evt, viewName) {
 
 }
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+//document.getElementById("defaultOpen").click();

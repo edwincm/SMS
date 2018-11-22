@@ -17,7 +17,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
         <title>MANAGEMENT</title>
         <link rel="stylesheet" href="design.css"/>
-        <script type="text/javascript" src="functions.js"></script>
+        <script type="text/javascript" src="js/management.js"></script>
     </head>
     <body>
         <nav class="navbar">
@@ -62,8 +62,36 @@
         </div>
 
         <div id="order" class="tabcontent">
-            <h3>ORDER</h3>
+            <div id="middle">
+                <form method="POST" action="#">
+                    <select name="items">
+                        <?php foreach($details AS $option): ?>
+                            <option id="item_value" value="<?php echo $option['ID'];?>"><?php echo $option['NAME']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <input style="text-align:center;" type="text" name="qty">
+                    <input type="submit" name="order" value="Order">
+                </form>
+            </div>
         </div>
+        <?php    
+            if(isset($_POST['order'])){
+                $qty=$_POST['qty'];
+                $code=$_POST['items'];
+                require("config.php");
+                //CREATE QUERY
+                $query="UPDATE item SET QUANTITY=QUANTITY+'$qty' WHERE ID='$code'";
+                if(mysqli_query($conn,$query)){
+                    //echo "<script type='text/javascript'>alert('Order placement successful!');</script>";
+                    header('Location:management.php');
+                }
+                else{
+                    echo "<script type='text/javascript'>alert('Order placement failed!');</script>";
+                }
+                //CLOSE CONNECTION 
+                mysqli_close($conn);
+            }
+        ?>
     </body>
     <footer>
         <p>&copy STORE MANAGEMENT SYSTEM</p>

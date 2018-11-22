@@ -24,14 +24,12 @@
             <h2>LOGIN</h2>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
                     <div class="inputbox">
-                        <label>ID</label>
-                        <input type="text" name="username" autofocus="" required=""/>
+                        <input type="text" name="username" autofocus="" placeholder="ID" required=""/>
                     </div>
                     <div class="inputbox">
-                        <label>Password</label>
-                        <input type="password" name="password" required=""/>
+                        <input type="password" name="password" placeholder="Password" required=""/>
                     </div>
-                    <input type="submit" name="log" value="Submit">
+                    <span><input type="submit" name="log" value="Submit"></span>
             </form>
         </div>
     </body>
@@ -52,10 +50,6 @@
                         else if($login['PRIVILEGE']==2){
                             header('Location:storekeeper.php');
                         }
-                        else{
-
-                        }
-                        break;
                     }
                 }
             }
