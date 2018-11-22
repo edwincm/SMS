@@ -15,14 +15,17 @@
 <html>
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+        
         <title>STORE MANAGEMENT SYSTEM</title>
+        
         <link rel="stylesheet" href="design.css"/>
     </head>
 
     <body>
+        <!-- Login section -->
         <div id="middle">
             <h2>LOGIN</h2>
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
+            <form method="POST" action="#">
                     <div class="inputbox">
                         <input type="text" name="username" autofocus="" placeholder="ID" required=""/>
                     </div>
@@ -35,6 +38,7 @@
     </body>
 </html>   
 
+<!-- PHP to validate login credentials -->
 <?php
     if(isset($_POST['log'])){ 
         if(isset($_POST['username'])){
