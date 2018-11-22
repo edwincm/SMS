@@ -28,14 +28,11 @@
             //javascript to multiply the unit price and quantity and display result in price column
             $(document).ready(function(e){
                 $("input[name=qty]").change(function(){
-                    var total=0,t;
-                    var sum=0;
+                    var prod=0;
                     var qty=parseInt($(this).val());
                     var unit=parseInt($("input[name=unit]").val());
-                    sum = qty*unit;
-                    total = total + sum; 
-                    $("input[name=sum]").val(sum); 
-                    $("input[name=total]").val(total);
+                    prod = qty*unit;
+                    $("input[name=sum]").val(prod); 
                 });
             });
         </script>
@@ -142,7 +139,7 @@
                 $query="UPDATE item SET QUANTITY=QUANTITY-'$qty' WHERE ID='$code'";
                 
                 if(mysqli_query($conn,$query)){
-                    echo "<b>".'<script type="text/javascript">alert("Total: Rs. '.$total.'\nPurchase successful!")</script>.'."</b>";
+                    echo '<script type="text/javascript">alert("Total: Rs. '.$total.'\nPurchase successful!")</script>.';
                 }
                 else{
                     echo "<script type='text/javascript'>alert('Purchase failed!');</script>";

@@ -43,10 +43,10 @@
     if(isset($_POST['log'])){ 
         if(isset($_POST['username'])){
             if(isset($_POST['password'])){
-                $email=$_POST['username'];
+                $id=$_POST['username'];
                 $pass=$_POST['password'];
                 foreach($logins AS $login){
-                    if($login['U_ID']==$email AND $login['PASSWORD']==$pass){
+                    if($login['U_ID']==$id AND $login['PASSWORD']==$pass){
                         $_SESSION['name']=$login['NAME'];
                         if($login['PRIVILEGE']==1){
                             header('Location:management.php');

@@ -12,6 +12,26 @@
     //CLOSE CONNECTION 
     mysqli_close($conn);
 ?>
+
+<!-- PHP to place order and update database -->
+<?php
+    if(isset($_POST['order'])){
+        $qty=$_POST['qty'];
+        $code=$_POST['items'];
+        require("config.php");
+        //CREATE QUERY
+        $query="UPDATE item SET QUANTITY=QUANTITY+'$qty' WHERE ID='$code'";
+        if(mysqli_query($conn,$query)){
+            header('Location:management.php');
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Order placement failed!');</script>";
+        }
+        //CLOSE CONNECTION 
+        mysqli_close($conn);
+    }
+?>
+
 <html>
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
@@ -56,8 +76,7 @@
                     
                     <tbody >
                         <?php
-                            foreach($details AS $detail){
-                                //Iterate through every value in $details array
+                            foreach($details AS $detail){   //Iterate through every value in $details array
                         ?>
                             <tr>
                                 <td><?php echo $detail['ID']?></td>
@@ -78,39 +97,15 @@
                 <form method="POST" action="#">
                     <!-- dropdown menu of items in database -->
                     <select name="items">
-                        <?php foreach($details AS $option): ?>
-                            <option id="item_value" value="<?php echo $option['ID'];?>"><?php echo $option['NAME']; ?></option>
-                        <?php endforeach; ?>
+                        <?php foreach($details AS $option):?>
+                            <option id="item_value" value="<?php echo $option['ID'];?>"><?php echo $option['NAME'];?></option>
+                        <?php endforeach;?>
                     </select>
                     <input style="text-align:center;" type="text" name="qty">
                     <input type="submit" name="order" value="Order">
                 </form>
             </div>
         </div>
-
-        <!-- PHP to place order and update database -->
-        <?php    
-            if(isset($_POST['order'])){
-                $qty=$_POST['qty'];
-                $code=$_POST['items'];
-                
-                require("config.php");
-                
-                //CREATE QUERY
-                $query="UPDATE item SET QUANTITY=QUANTITY+'$qty' WHERE ID='$code'";
-                
-                if(mysqli_query($conn,$query)){
-                    header('Location:management.php');
-                }
-                else{
-                    echo "<script type='text/javascript'>alert('Order placement failed!');</script>";
-                }
-                
-                //CLOSE CONNECTION 
-                mysqli_close($conn);
-            }
-        ?>
-
     </body>
 
     <footer>
@@ -122,10 +117,8 @@
     if(isset($_POST['logout'])){ 
         // remove all session variables
         session_unset();
-
         // destroy the session
-        session_destroy(); 
-
+        session_destroy();
         header('Location:index.php');
         
     }
