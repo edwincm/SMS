@@ -17,8 +17,4 @@ function openView(evt, viewName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(viewName).style.display = "block";
     evt.currentTarget.className += " active";
-
-
 }
-// Get the element with id="defaultOpen" and click on it
-//document.getElementById("defaultOpen").click();
